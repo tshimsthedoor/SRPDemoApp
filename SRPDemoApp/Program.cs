@@ -24,17 +24,21 @@ namespace SRPDemoApp
 
         private static void PrintSeniority(Employee robin)
         {
-            throw new NotImplementedException();
+            SeniorityChecker seniorityChecker = new SeniorityChecker();
+            string seniorLevel = seniorityChecker.CheckSeniority(robin.experienceInYears);
+            Console.WriteLine($"This employee is a {seniorLevel} employee.");
         }
 
         private static void PrintEmployeeId(Employee robin)
         {
-            throw new NotImplementedException();
+            EmployeeIdGenerator idGenerator = new EmployeeIdGenerator();
+            string empId = idGenerator.GenerateEmployeedId(robin.empLastName);
+            Console.WriteLine($"The employee id: {empId}");
         }
 
         private static void PrintEmployeeDetail(Employee robin)
         {
-           robin
+            robin.DisplayEmployeeDetail();
         }
     }
 }
